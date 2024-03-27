@@ -21,7 +21,6 @@ from src.graph_utils import get_index_edge_list
 from src.optimization import Evaluator, optimize_qaoa_angles
 from src.preprocessing import evaluate_graph_cut, evaluate_z_term
 
-
 @dataclass(kw_only=True)
 class WorkerAbstract(ABC):
     """
@@ -515,6 +514,7 @@ class WorkerRandomCircuit(WorkerStandard):
     """
 
     angle_df: Series | None = None
+    do_opt: bool
 
     def process_entry(self, entry: tuple[tuple[str, str], Series]) -> Series:
         paths, series = entry
@@ -529,15 +529,17 @@ class WorkerRandomCircuit(WorkerStandard):
         elif self.search_space == "ma":
             evaluator = Evaluator.get_evaluator_random_circuit_maxcut_analytical(graph, graph_random, use_multi_angle=True)
 
-        # result = optimize_qaoa_angles(evaluator, starting_angles=starting_angles, num_restarts=100, objective_tolerance=1.1, normalize_angles=False)
-        # series[self.out_col] = -result.fun / graph.graph['maxcut']
-        # series[self.out_col + '_angles'] = result.x
-        # series[self.out_col + '_nfev'] = result.nfev
+        if self.do_opt:
+            result = optimize_qaoa_angles(evaluator, starting_angles=starting_angles, num_restarts=100, objective_tolerance=1.1, normalize_angles=False)
+            series[self.out_col] = -result.fun / graph.graph['maxcut']
+            series[self.out_col + '_angles'] = result.x
+            series[self.out_col + '_nfev'] = result.nfev
+        else:
+            result = evaluator.func(starting_angles)
+            series[self.out_col] = -result / graph.graph['maxcut']
+            series[self.out_col + '_angles'] = starting_angles
+            series[self.out_col + '_nfev'] = 1
 
-        result = evaluator.func(starting_angles)
-        series[self.out_col] = -result / graph.graph['maxcut']
-        series[self.out_col + '_angles'] = starting_angles
-        series[self.out_col + '_nfev'] = 1
         return series
 
 
