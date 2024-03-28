@@ -11,8 +11,8 @@ import math
 
 #|%%--%%| <Oew5vciEXq|zve2lMjqZv>
 
-result_filename = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/QAOA_dat.csv'
-df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/qaoa.csv'
+result_filename = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/QAOA_dat.csv'
+df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/qaoa.csv'
 
 if os.path.exists(df_filename):
     qaoa_df = pd.read_csv(df_filename)
@@ -39,72 +39,72 @@ def read_dfs(df_filename, result_filename):
 
 
 # Normal QAOA
-result_filename = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/results/random_circuit/qaoa/out.csv'
-df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/my_qaoa.csv'
+result_filename = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/results/random_circuit/qaoa/out.csv'
+df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/my_qaoa.csv'
 my_qaoa_df = read_dfs(df_filename, result_filename)
 
 # Normal ma QAOA
-result_filename_ma = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/results/random_circuit/qaoa/out_ma.csv'
-df_filename_ma = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/my_qaoa_ma.csv'
+result_filename_ma = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/results/random_circuit/qaoa/out_ma.csv'
+df_filename_ma = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_ma.csv'
 my_qaoa_ma_df = read_dfs(df_filename_ma, result_filename_ma)
 # prettify(my_qaoa_ma_df, col_limit=15, row_limit=25)
 
 # ma QAOA with rounded starting angles
-result_filename_ma_post_rounded_4 = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/results/angle_rounding_gamma_ma/normal_out_rounded_4.csv'
-df_filename_ma_post_rounded_4 = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/my_qaoa_ma_post_rounded_4.csv'
+result_filename_ma_post_rounded_4 = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/results/angle_rounding_gamma_ma/normal_out_rounded_4.csv'
+df_filename_ma_post_rounded_4 = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_ma_post_rounded_4.csv'
 post_rounded_4_my_qaoa_ma_df = read_dfs(df_filename_ma_post_rounded_4, result_filename_ma_post_rounded_4)
 # prettify(post_rounded_4_my_qaoa_ma_df, col_limit=15, row_limit=25)
 
 # ma QAOA with random init starting angles
-result_filename_random_ma = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/results/angle_rounding_gamma_ma/normal_out_random.csv'
-df_filename_random_ma = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/my_qaoa_random.csv'
+result_filename_random_ma = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/results/angle_rounding_gamma_ma/normal_out_random.csv'
+df_filename_random_ma = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_random.csv'
 random_my_qaoa_ma_df = read_dfs(df_filename_random_ma, result_filename_random_ma)
 # prettify(random_my_qaoa_ma_df, col_limit=15, row_limit=25)
 
 # ma QAOA with random init starting angles and no optimization
-result_filename_random_ma_no_opt = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/results/angle_rounding_gamma_ma/normal_out_random_no_opt.csv'
-df_filename_random_ma_no_opt = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/my_qaoa_random_no_opt.csv'
+result_filename_random_ma_no_opt = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/results/angle_rounding_gamma_ma/normal_out_random_no_opt.csv'
+df_filename_random_ma_no_opt = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_random_no_opt.csv'
 no_opt_random_my_qaoa_ma_df = read_dfs(df_filename_random_ma_no_opt, result_filename_random_ma_no_opt)
 # prettify(no_opt_random_my_qaoa_ma_df, col_limit=15, row_limit=25)
 
 # ma QAOA with rounded starting angles and no optimization
-result_filename_rounded_ma_no_opt = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/results/angle_rounding_gamma_ma/normal_out_rounded_4_no_opt.csv'
-df_filename_rounded_ma_no_opt = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/my_qaoa_rounded_4_no_opt.csv'
+result_filename_rounded_ma_no_opt = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/results/angle_rounding_gamma_ma/normal_out_rounded_4_no_opt.csv'
+df_filename_rounded_ma_no_opt = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_rounded_4_no_opt.csv'
 no_opt_rounded_4_my_qaoa_ma_df = read_dfs(df_filename_rounded_ma_no_opt, result_filename_rounded_ma_no_opt)
 # prettify(no_opt_rounded_4_my_qaoa_ma_df, col_limit=15, row_limit=25)
 
 # ma QAOA with random rounded starting angles and no optimization
-result_filename_random_rounded_no_opt = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/results/angle_rounding_gamma_ma/normal_out_random_rounded_no_opt.csv'
-df_filename_random_rounded_no_opt = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/my_qaoa_random_rounded_no_opt.csv'
+result_filename_random_rounded_no_opt = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/results/angle_rounding_gamma_ma/normal_out_random_rounded_no_opt.csv'
+df_filename_random_rounded_no_opt = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_random_rounded_no_opt.csv'
 my_qaoa_ma_random_rounded_no_opt_df = read_dfs(df_filename_random_rounded_no_opt, result_filename_random_rounded_no_opt)
 
 # 4 vertex graphs
-ma_qaoa_4_vertex_result_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/results/angle_rounding_gamma_ma/normal_ma_4_vertex.csv'
-df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/ma_qaoa_4_vertex.csv'
+ma_qaoa_4_vertex_result_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/results/angle_rounding_gamma_ma/normal_ma_4_vertex.csv'
+df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/ma_qaoa_4_vertex.csv'
 ma_qaoa_4_vertex_df = read_dfs(df_filename, ma_qaoa_4_vertex_result_filename)
 prettify(ma_qaoa_4_vertex_df, col_limit=15, row_limit=25)
 
 # 4 vertex graphs with rounded starting angles
-ma_qaoa_4_vertex_rounded_result_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/results/angle_rounding_gamma_ma/normal_ma_4_vertex_rounded.csv'
-df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/ma_qaoa_4_vertex_rounded.csv'
+ma_qaoa_4_vertex_rounded_result_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/results/angle_rounding_gamma_ma/normal_ma_4_vertex_rounded.csv'
+df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/ma_qaoa_4_vertex_rounded.csv'
 ma_qaoa_4_vertex_rounded_df = read_dfs(df_filename, ma_qaoa_4_vertex_rounded_result_filename)
 prettify(ma_qaoa_4_vertex_rounded_df, col_limit=15, row_limit=25)
 
 # 4 vertex graphs with random starting angles
-ma_qaoa_4_vertex_random_result_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/results/angle_rounding_gamma_ma/normal_ma_4_vertex_random_int.csv'
-df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/ma_qaoa_4_vertex_random.csv'
+ma_qaoa_4_vertex_random_result_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/results/angle_rounding_gamma_ma/normal_ma_4_vertex_random_int.csv'
+df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/ma_qaoa_4_vertex_random.csv'
 ma_qaoa_4_vertex_random_df = read_dfs(df_filename, ma_qaoa_4_vertex_random_result_filename)
 prettify(ma_qaoa_4_vertex_random_df, col_limit=15, row_limit=25)
 
 # 4 vertex graphs with random starting angles and no optimization
-ma_qaoa_4_vertex_random_no_opt_result_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/results/angle_rounding_gamma_ma/normal_ma_4_vertex_random_int_no_opt.csv'
-df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/ma_qaoa_4_vertex_random_no_opt.csv'
+ma_qaoa_4_vertex_random_no_opt_result_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/results/angle_rounding_gamma_ma/normal_ma_4_vertex_random_int_no_opt.csv'
+df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/ma_qaoa_4_vertex_random_no_opt.csv'
 ma_qaoa_4_vertex_random_no_opt_df = read_dfs(df_filename, ma_qaoa_4_vertex_random_no_opt_result_filename)
 prettify(ma_qaoa_4_vertex_random_no_opt_df)
 
 # 4 vertex graphs with rounded starting angles and no optimization
-ma_qaoa_4_vertex_rounded_no_opt_result_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/results/angle_rounding_gamma_ma/normal_ma_4_vertex_rounded_no_opt.csv'
-df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/ma_qaoa_4_vertex_rounded_no_opt.csv'
+ma_qaoa_4_vertex_rounded_no_opt_result_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/results/angle_rounding_gamma_ma/normal_ma_4_vertex_rounded_no_opt.csv'
+df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/ma_qaoa_4_vertex_rounded_no_opt.csv'
 ma_qaoa_4_vertex_rounded_no_opt_df = read_dfs(df_filename, ma_qaoa_4_vertex_rounded_no_opt_result_filename)
 prettify(ma_qaoa_4_vertex_rounded_no_opt_df, col_limit=15, row_limit=25)
 
@@ -153,7 +153,7 @@ graphs = [
 for i, g in enumerate(graphs):
     # G = nx.from_sparse6_bytes(g)
     G = nx.from_graph6_bytes(g)
-    nx.write_gml(G, f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/graphs/main/all_4/graph_{i}/{i}.gml')
+    nx.write_gml(G, f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/graphs/main/all_4/graph_{i}/{i}.gml')
     print(G.edges())
 
 
@@ -265,7 +265,7 @@ def normalize_qaoa_angles(angles):
 
 
 def make_angle_df(df, name, n, ma=True):
-    df_filename = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/{name}.csv'
+    df_filename = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/{name}.csv'
     if os.path.exists(df_filename):
         angles_df = pd.read_csv(df_filename)
     else:
@@ -330,14 +330,14 @@ my_qaoa_rounded_angles_df = correct_angle_rounding(my_qaoa_df)
 my_qaoa_rounded_angles_ma_df = correct_angle_rounding(my_qaoa_ma_df)
 
 
-my_qaoa_rounded_angles_df.to_csv('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/my_qaoa_rounded_angles.csv', index=False)
-my_qaoa_rounded_angles_ma_df.to_csv('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/my_qaoa_rounded_angles_ma.csv', index=False)
+my_qaoa_rounded_angles_df.to_csv('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_rounded_angles.csv', index=False)
+my_qaoa_rounded_angles_ma_df.to_csv('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_rounded_angles_ma.csv', index=False)
 
 no_opt_random_my_qaoa_ma_rounded_angles_df = correct_angle_rounding(no_opt_random_my_qaoa_ma_df)
-no_opt_random_my_qaoa_ma_rounded_angles_df.to_csv('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/my_qaoa_random_rounded_angles.csv', index=False)
+no_opt_random_my_qaoa_ma_rounded_angles_df.to_csv('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_random_rounded_angles.csv', index=False)
 
 ma_qaoa_4_vertex_rounded_angles_df = correct_angle_rounding(ma_qaoa_4_vertex_df)
-ma_qaoa_4_vertex_rounded_angles_df.to_csv('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/ma_qaoa_4_vertex_rounded_angles.csv', index=False)
+ma_qaoa_4_vertex_rounded_angles_df.to_csv('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/ma_qaoa_4_vertex_rounded_angles.csv', index=False)
 
 #|%%--%%| <svYxweGbSI|KS2J5Nr9GW>
 
@@ -356,10 +356,10 @@ def random_initial_angles(df):
 
 # my_qaoa_random_angles_df = random_initial_angles(my_qaoa_df)
 my_qaoa_random_angles_ma_df = random_initial_angles(my_qaoa_ma_df)
-# my_qaoa_random_angles_df.to_csv('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/my_qaoa_random_angles.csv', index=False)
-my_qaoa_random_angles_ma_df.to_csv('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/my_qaoa_random_angles_ma.csv', index=False)
+# my_qaoa_random_angles_df.to_csv('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_random_angles.csv', index=False)
+my_qaoa_random_angles_ma_df.to_csv('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_random_angles_ma.csv', index=False)
 ma_qaoa_4_vertex_random_angles_df = random_initial_angles(ma_qaoa_4_vertex_df)
-ma_qaoa_4_vertex_random_angles_df.to_csv('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/ma_qaoa_4_vertex_random_angles.csv', index=False)
+ma_qaoa_4_vertex_random_angles_df.to_csv('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/ma_qaoa_4_vertex_random_angles.csv', index=False)
 
 
 #|%%--%%| <wziRKfi2ym|T3SbQ5jEdG>
@@ -395,7 +395,7 @@ For each graph:
 °°°"""
 #|%%--%%| <6KsdbJ1XNz|CatgdrvSn1>
 
-graph_dir = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/graphs/main/all_8/'
+graph_dir = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/graphs/main/all_8/'
 
 
 def do_zero_angles_correspond_to_triangles(df):
@@ -451,26 +451,26 @@ post_rounded_my_qaoa_angles_ma_df['zeros'] = post_rounded_my_qaoa_angles_ma_df[p
 
 plot_df = my_qaoa_angles_ma_df['triangles'].apply(lambda x: len(x))
 plot_df.plot(kind='hist', title='Number of Triangles for Zero Gamma Angles')
-plt.savefig('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/num_triangles_zero_gamma_angles_ma.eps')
+plt.savefig('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/num_triangles_zero_gamma_angles_ma.eps')
 
 #|%%--%%| <4O26vQ5nfy|8QLzlup78E>
 
 plot_df = post_rounded_my_qaoa_angles_ma_df['triangles'].apply(lambda x: len(x))
 plot_df.plot(kind='hist', title='Number of Triangles for Zero Gamma Angles Post Rounded')
-plt.savefig('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/num_triangles_zero_gamma_angles_ma_post_rounded.eps')
+plt.savefig('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/num_triangles_zero_gamma_angles_ma_post_rounded.eps')
 
 #|%%--%%| <8QLzlup78E|0TJyEkG09b>
 
 plot_df = my_qaoa_angles_ma_df['triangles'].apply(lambda x: len(x)) / my_qaoa_angles_ma_df['zeros'].apply(lambda x: len(x))
 plot_df.plot(kind='hist', title='Fraction of Triangles for Zero Gamma Angles')
-plt.savefig('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/fraction_triangles_zero_gamma_angles_ma.eps')
+plt.savefig('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/fraction_triangles_zero_gamma_angles_ma.eps')
 
 
 #|%%--%%| <0TJyEkG09b|JOt3dc2gxT>
 
 plot_df = post_rounded_my_qaoa_angles_ma_df['triangles'].apply(lambda x: len(x)) / post_rounded_my_qaoa_angles_ma_df['zeros'].apply(lambda x: len(x))
 plot_df.plot(kind='hist', title='Fraction of Triangles for Zero Gamma Angles Post Rounded')
-plt.savefig('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/fraction_triangles_zero_gamma_angles_ma_post_rounded.eps')
+plt.savefig('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/fraction_triangles_zero_gamma_angles_ma_post_rounded.eps')
 
 #|%%--%%| <JOt3dc2gxT|jyhkB7rqif>
 
@@ -660,8 +660,8 @@ prettify(gamma_removed_angles_ma_df.round(3).describe())
 
 good_num = 9
 fig, ax = plt.subplots(1, 1, figsize=(15, 15))
-G = nx.Graph(nx.read_gml('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/'+gamma_removed_ma_df['path'].iloc[good_num]))
-G_random = nx.Graph(nx.read_gml('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/'+gamma_removed_ma_df['random_path'].iloc[good_num]))
+G = nx.Graph(nx.read_gml('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/'+gamma_removed_ma_df['path'].iloc[good_num]))
+G_random = nx.Graph(nx.read_gml('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/'+gamma_removed_ma_df['random_path'].iloc[good_num]))
 print(G.edges())
 print(G_random.edges())
 
@@ -681,7 +681,7 @@ nx.draw(G_combined, with_labels=True, font_weight='bold', edge_color=[G_combined
 
 
 def make_angle_df(df, name, ma=True):
-    # df_filename = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/{name}.csv'
+    # df_filename = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/{name}.csv'
     # if os.path.exists(df_filename):
     #     angles_df = pd.read_csv(df_filename)
     # else:
@@ -707,8 +707,8 @@ def make_angle_df(df, name, ma=True):
 
 #|%%--%%| <TWvJ5dOLxF|knYB461DpI>
 
-ma_qaoa_4_vertex_result_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/results/angle_rounding_gamma_ma/normal_ma_4_vertex.csv'
-df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/ma_qaoa_4_vertex.csv'
+ma_qaoa_4_vertex_result_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/results/angle_rounding_gamma_ma/normal_ma_4_vertex.csv'
+df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/ma_qaoa_4_vertex.csv'
 ma_qaoa_4_vertex_df = read_dfs(df_filename, ma_qaoa_4_vertex_result_filename)
 # ma_qaoa_4_vertex_df = pd.read_csv(ma_qaoa_4_vertex_result_filename)
 prettify(ma_qaoa_4_vertex_df)
@@ -779,8 +779,8 @@ fig.show()
 #|%%--%%| <knYB461DpI|Z6mRwD1j4V>
 
 
-result_filename_ma = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/results/random_circuit/qaoa/out_ma.csv'
-df_filename_ma = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/my_qaoa_ma.csv'
+result_filename_ma = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/results/random_circuit/qaoa/out_ma.csv'
+df_filename_ma = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_ma.csv'
 my_qaoa_ma_df = read_dfs(df_filename_ma, result_filename_ma)
 # prettify(my_qaoa_ma_df, col_limit=15, row_limit=25)
 

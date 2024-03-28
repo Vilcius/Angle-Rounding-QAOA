@@ -60,87 +60,84 @@ def run_graphs_parallel():
     random_type = 'angle_rounding_gamma'
     out_col = f'p_{p}'
 
-    ### with optimization
-    ## rounded QAOA
+    # with optimization
+    # rounded QAOA
     # out_path = 'results/angle_rounding_gamma/normal_out_rounded_4.csv'
-    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/MA-QAOA/result_analysis/my_qaoa_rounded_angles.csv')
+    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_rounded_angles.csv')
     # worker = WorkerRandomCircuit(reader=reader, p=p, out_col=out_col, angle_df=angle_df, search_space='qaoa', do_opt = True)
 
-    ## random QAOA
+    # random QAOA
     # out_path = 'results/angle_rounding_gamma/normal_out_random.csv'
-    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/MA-QAOA/result_analysis/my_qaoa_random_angles.csv')
+    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_random_angles.csv')
     # worker = WorkerRandomCircuit(reader=reader, p=p, out_col=out_col, angle_df=angle_df, search_space='qaoa', do_opt = True)
 
-    ## rounded ma-QAOA
+    # rounded ma-QAOA
     # out_path = 'results/angle_rounding_gamma_ma/normal_out_rounded_4.csv'
-    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/MA-QAOA/result_analysis/my_qaoa_rounded_angles_ma.csv')
+    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_rounded_angles_ma.csv')
     # worker = WorkerRandomCircuit(reader=reader, p=p, out_col=out_col, angle_df=angle_df, search_space='ma', do_opt = True)
 
-    ## random ma-QAOA
+    # random ma-QAOA
     # out_path = 'results/angle_rounding_gamma_ma/normal_out_random.csv'
-    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/MA-QAOA/result_analysis/my_qaoa_random_angles_ma.csv')
+    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_random_angles_ma.csv')
     # worker = WorkerRandomCircuit(reader=reader, p=p, out_col=out_col, angle_df=angle_df, search_space='ma', do_opt = True)
 
-
-    ### withOUT optimization
-    ## rounded QAOA
+    # withOUT optimization
+    # rounded QAOA
     # out_path = 'results/angle_rounding_gamma/normal_out_rounded_4_no_opt.csv'
-    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/MA-QAOA/result_analysis/my_qaoa_rounded_angles.csv')
+    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_rounded_angles.csv')
     # worker = WorkerRandomCircuit(reader=reader, p=p, out_col=out_col, angle_df=angle_df, search_space='qaoa', do_opt = False)
 
-    ## random QAOA
+    # random QAOA
     # out_path = 'results/angle_rounding_gamma/normal_out_random_no_opt.csv'
-    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/MA-QAOA/result_analysis/my_qaoa_random_angles.csv')
+    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_random_angles.csv')
     # worker = WorkerRandomCircuit(reader=reader, p=p, out_col=out_col, angle_df=angle_df, search_space='qaoa', do_opt = False)
 
-    ## rounded ma-QAOA
+    # rounded ma-QAOA
     # out_path = 'results/angle_rounding_gamma_ma/normal_out_rounded_4_no_opt.csv'
-    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/MA-QAOA/result_analysis/my_qaoa_rounded_angles_ma.csv')
+    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_rounded_angles_ma.csv')
     # worker = WorkerRandomCircuit(reader=reader, p=p, out_col=out_col, angle_df=angle_df, search_space='ma', do_opt = False)
 
-    ## random ma-QAOA
+    # random ma-QAOA
     # out_path = 'results/angle_rounding_gamma_ma/normal_out_random_no_opt.csv'
-    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/MA-QAOA/result_analysis/my_qaoa_random_angles_ma.csv')
+    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_random_angles_ma.csv')
     # worker = WorkerRandomCircuit(reader=reader, p=p, out_col=out_col, angle_df=angle_df, search_space='ma', do_opt = False)
 
-
-    ### rounded withOUT optimization
+    # rounded withOUT optimization
     # out_path = 'results/angle_rounding_gamma_ma/normal_out_random_rounded_no_opt.csv'
-    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/MA-QAOA/result_analysis/my_qaoa_random_rounded_angles.csv')
+    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_random_rounded_angles.csv')
     # worker = WorkerRandomCircuit(reader=reader, p=p, out_col=out_col, angle_df=angle_df, search_space='ma', do_opt = False)
 
-    ## 4 Vertex
-    ### Normal
+    # 4 Vertex
+    # Normal
     # out_path = 'results/angle_rounding_gamma_ma/normal_ma_4_vertex.csv'
     # worker = WorkerRandomCircuit(reader=reader, p=p, out_col=out_col, search_space='ma', do_opt=True)
 
-    ### Random init with opt
+    # Random init with opt
     # out_path = 'results/angle_rounding_gamma_ma/normal_ma_4_vertex_random_int.csv'
-    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/MA-QAOA/result_analysis/ma_qaoa_4_vertex_random_angles.csv')
+    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/Angle-Rounding-QAOA/result_analysis/ma_qaoa_4_vertex_random_angles.csv')
     # worker = WorkerRandomCircuit(reader=reader, p=p, out_col=out_col, angle_df=angle_df, search_space='ma', do_opt=True)
 
-    ### Rounded with opt
+    # Rounded with opt
     # out_path = 'results/angle_rounding_gamma_ma/normal_ma_4_vertex_rounded.csv'
-    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/MA-QAOA/result_analysis/ma_qaoa_4_vertex_rounded_angles.csv')
+    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/Angle-Rounding-QAOA/result_analysis/ma_qaoa_4_vertex_rounded_angles.csv')
     # worker = WorkerRandomCircuit(reader=reader, p=p, out_col=out_col, angle_df=angle_df, search_space='ma', do_opt=True)
 
-    ### Random init with opt
+    # Random init with opt
     # out_path = 'results/angle_rounding_gamma_ma/normal_ma_4_vertex_random_int_no_opt.csv'
-    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/MA-QAOA/result_analysis/ma_qaoa_4_vertex_random_angles.csv')
+    # angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/Angle-Rounding-QAOA/result_analysis/ma_qaoa_4_vertex_random_angles.csv')
     # worker = WorkerRandomCircuit(reader=reader, p=p, out_col=out_col, angle_df=angle_df, search_space='ma', do_opt=False)
 
-    ### Rounded with opt
+    # Rounded with opt
     out_path = 'results/angle_rounding_gamma_ma/normal_ma_4_vertex_rounded_no_opt.csv'
-    angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/MA-QAOA/result_analysis/ma_qaoa_4_vertex_rounded_angles.csv')
+    angle_df = pd.read_csv('/home/agwilkie/papers/angle_rounding/code/Angle-Rounding-QAOA/result_analysis/ma_qaoa_4_vertex_rounded_angles.csv')
     worker = WorkerRandomCircuit(reader=reader, p=p, out_col=out_col, angle_df=angle_df, search_space='ma', do_opt=False)
 
-    # angle_df = pd.read_csv('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/MA-QAOA/result_analysis/my_qaoa_rounded_angles_ma.csv')
+    # angle_df = pd.read_csv('/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/my_qaoa_rounded_angles_ma.csv')
 
     # initial_guess_from = None if p == 1 else f'p_{p - 1}'
     # initial_guess_from = f'p_{p}'
     # transfer_from = None if p == 1 else f'p_{p - 1}'
     # transfer_p = None if p == 1 else p - 1
-
 
     data_path = f'graphs/main/all_{nodes}/'
 
