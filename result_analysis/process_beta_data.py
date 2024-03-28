@@ -496,13 +496,15 @@ plt.yscale('log')
 # plt.xlabel(r'$AR^{\mathrm{ma}} - AR^{\mathrm{ma,\;rounded}}$')
 # plt.xlabel(r'$AR^{\mathrm{ma}} - AR^{\mathrm{ma,\;random\;init}}$')
 # plt.xlabel(r'$AR^{\mathrm{ma}} - AR^{\mathrm{ma,\;random\;init,\;no\;opt}}$')
-plt.xlabel(r'$AR^{\mathrm{ma}} - AR^{\mathrm{ma,\;rounded,\;no\;opt}}$')
+# plt.xlabel(r'$AR^{\mathrm{ma}} - AR^{\mathrm{ma,\;rounded,\;no\;opt}}$')
+plt.xlabel(r'$AR^{\mathrm{ma}} - AR^{\mathrm{ma,\;r}}$')
 # plt.xlabel(r'$AR^{\mathrm{ma}} - AR^{\mathrm{ma,\;random\;init,\;rounded,\;no\;opt}}$')
 plt.ylabel('Number of occurrences')
 # plt.title(r"Difference between $AR^{\mathrm{ma}}$ and $AR^{\mathrm{ma,\;rounded}}$ and"+"\nthe number of times difference occurs for all eight-vertex graphs.", color=COLOR)
 # plt.title(r"Difference between $AR^{\mathrm{ma}}$ and $AR^{\mathrm{ma,\;random\;init}}$ and"+"\nthe number of times difference occurs for all eight-vertex graphs.", color=COLOR)
 # plt.title(r"Difference between $AR^{\mathrm{ma}}$ and $AR^{\mathrm{ma,\;random\;init,\;no\;opt}}$ and"+"\nthe number of times difference occurs for all eight-vertex graphs.", color=COLOR)
-plt.title(r"Difference between $AR^{\mathrm{ma}}$ and $AR^{\mathrm{ma,\;rounded,\;no\;opt}}$ and"+"\nthe number of times difference occurs for all eight-vertex graphs.", color=COLOR)
+# plt.title(r"Difference between $AR^{\mathrm{ma}}$ and $AR^{\mathrm{ma,\;rounded,\;no\;opt}}$ and"+"\nthe number of times difference occurs for all eight-vertex graphs.", color=COLOR)
+plt.title(r"Difference between $AR^{\mathrm{ma}}$ and $AR^{\mathrm{ma,\;r}}$ and"+"\nthe number of times difference occurs for all eight-vertex graphs.", color=COLOR)
 # plt.title(r"Difference between $AR^{\mathrm{ma}}$ and $AR^{\mathrm{ma,\;random\;init,\;rounded,\;no\;opt}}$ and"+"\nthe number of times difference occurs for all eight-vertex graphs.", color=COLOR)
 # plt.savefig(f'{paper_dir}difference_ar_eight_vertex_4.eps', format='eps')
 # plt.savefig(f'{paper_dir}difference_ar_eight_vertex_random.eps', format='eps')
@@ -677,35 +679,7 @@ for e in G_combined.edges:
 
 nx.draw(G_combined, with_labels=True, font_weight='bold', edge_color=[G_combined[u][v]['color'] for u, v in G_combined.edges])
 
-#|%%--%%| <MRi3u3mQ0b|TWvJ5dOLxF>
-
-
-def make_angle_df(df, name, ma=True):
-    # df_filename = f'/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/{name}.csv'
-    # if os.path.exists(df_filename):
-    #     angles_df = pd.read_csv(df_filename)
-    # else:
-    if ma:
-        nb = 4
-        ng = 6
-    else:
-        nb = 1
-        ng = 1
-
-    angles_df = df[['p_1']]
-    angles_df['p_1_angles'] = df['p_1_angles'].apply(lambda x: x.replace('[', '').replace(']', '').split(' '))
-    angles_df['p_1_angles'] = angles_df['p_1_angles'].apply(lambda x: [float(a) for a in x if a != ''])
-    angles_df['p_1_angles'] = angles_df['p_1_angles'].apply(lambda x: x[-nb:] + x[:-nb])  # put gamma angles after beta angles
-    # angles_df['p_1_angles'] = angles_df['p_1_angles'].apply(lambda x: normalize_qaoa_angles(np.array(x)))
-    angles_df = pd.concat([df[['p_1']], angles_df['p_1_angles'].apply(pd.Series)], axis=1)
-    angles_df.rename(columns={i: f'beta_{i}' for i in range(nb)} | {i: f'gamma_{i-nb}' for i in range(nb, nb+ng)}, inplace=True)
-
-    # angles_df.to_csv(df_filename, index=False)
-
-    return angles_df
-
-
-#|%%--%%| <TWvJ5dOLxF|knYB461DpI>
+#|%%--%%| <MRi3u3mQ0b|knYB461DpI>
 
 ma_qaoa_4_vertex_result_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/results/angle_rounding_gamma_ma/normal_ma_4_vertex.csv'
 df_filename = '/home/vilcius/Papers/angle_analysis_ma_qaoa/code/Angle-Rounding-QAOA/result_analysis/ma_qaoa_4_vertex.csv'
@@ -786,7 +760,7 @@ my_qaoa_ma_df = read_dfs(df_filename_ma, result_filename_ma)
 
 # rounded_ma_qaoa_4_vertex_df = correct_angle_rounding(ma_qaoa_4_vertex_df, norm=False)
 # prettify(rounded_ma_qaoa_4_vertex_df)
-n8_angles_df = make_angle_df(my_qaoa_ma_df, 'n8_angles', ma=True)
+n8_angles_df = make_angle_df(my_qaoa_ma_df, 'n8_angles', 8, ma=True)
 # prettify(n8_angles_df)
 
 # n8_angles = n8_angles_df.filter(regex=('beta|gamma')).values.flatten()/(np.pi/8)
